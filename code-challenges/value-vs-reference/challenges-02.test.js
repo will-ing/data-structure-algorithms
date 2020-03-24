@@ -9,7 +9,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  // Solution code here...
+  return str + ' The end.';
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+  arr.push(arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,9 +44,7 @@ addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
-const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
-};
+const addBirthYearProperty = (obj, year) => { obj.yearBorn = year };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -62,7 +60,8 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  let adding = (person) => {person.isAuthor = true}
+  people.forEach(adding);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +80,9 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => {
-  // Solution code here...
+  arr2.forEach( (value) => {
+    arr1.push(value);
+  });
 
 };
 
@@ -107,7 +108,7 @@ describe('Testing challenge 1', () => {
 });
 
 describe('Testing challenge 2', () => {
-  test('It should append by modifying the oiginal', () => {
+test('It should append by modifying the oiginal', () => {
     const a = ['Yes', 'it', 'is'];
     appendFirstToLast(a);
 
