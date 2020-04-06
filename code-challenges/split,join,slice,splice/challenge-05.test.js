@@ -15,7 +15,10 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for(let i = 0; i <= str.length; i++){
+    let nArr = str.slice(i, str.length);
+    result.push(nArr);
+  }
   return result;
 };
 
@@ -28,7 +31,12 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  let result = [];
+  for(let i = 0; i < arr.length; i++){
+    let nArr = arr.slice(i,i+1);
+    result.push(nArr);
+  }
+  return result;
 };
 
 
@@ -75,10 +83,12 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  
+  myArr = recipe.ingredients.match(/\d\s(medium-sized|pounds|gallons|cups)\s/);
   return result;
 };
-
+// /\D\s(?=([a-z\s]*))/
+// (\d\s(medium-sized|pounds|gallons|cups)\s)([a-z\s]*)
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -89,7 +99,7 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
   return result;
 };
 
@@ -105,7 +115,11 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(action => {
+    let position = action.indexOf(' ', 1);
+    result.push(action.slice(0, position));
+  });
+
   return result;
 };
 
