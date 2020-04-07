@@ -83,12 +83,15 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  
-  myArr = recipe.ingredients.match(/\d\s(medium-sized|pounds|gallons|cups)\s/);
+  let position = 0;
+  let ingredients = recipe.ingredients;
+  ingredients.forEach(ingredient => {
+    position = ingredient.indexOf(' ', ingredient.indexOf(' ') + 1);
+    result.push(ingredient.slice(position + 1));
+  });
   return result;
 };
-// /\D\s(?=([a-z\s]*))/
-// (\d\s(medium-sized|pounds|gallons|cups)\s)([a-z\s]*)
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -99,7 +102,10 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-
+  recipe.ingredients.forEach( ingredient =>{
+    let [amount, measurement, list] = ingredient.split(/\s+([A-Za-z-0-9-]*\s)(.*)/g);
+    result.push(list);
+  });
   return result;
 };
 
@@ -137,8 +143,15 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] % 2 === 0){
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
