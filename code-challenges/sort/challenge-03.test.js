@@ -86,18 +86,10 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  arr.sort ((a, b) => {
-    let na = a.length;
-    let nb = b.length;
+ 
+  return arr.sort((a,b) => a.toString().length - b.toString().length);
 
-    let comp = 0;
-    if (na > nb){
-      comp = 1;
-    }else if(na < nb){
-      comp = -1;
-    }return comp; // this is broken, returns failed
-  });
-  return arr;
+ 
 }; 
 
 /*-----------------------------------------------------------------------------------------------
