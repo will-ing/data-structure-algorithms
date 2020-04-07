@@ -120,8 +120,21 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  let ttlCharacters = [];
+  arr.forEach(character => {
+   ttlCharacters.push(character.name);
+   character.spouse !== null ? ttlCharacters.push(character.spouse) : false;
+   if (character.children.length > 0){
+     character.children.forEach(child => {
+       ttlCharacters.push(child);
+     });
+   }
+  
+  });
+  return ttlCharacters.length;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
