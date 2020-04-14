@@ -170,16 +170,11 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  let onlyNum = arr.filter(no => {
+  const onlyNum = arr.filter(no => {
     return typeof(no) === 'number' ? true : false;
   });
-  let evenOrOdd = onlyNum.map(value => {
+  const evenOrOdd = onlyNum.map(value => {
     return value % 2 === 0 ? 'even' : 'odd';
-    // if(value % 2 === 0){
-    //   return 'even';
-    // }else{
-    //   return 'odd';
-    // }
   });
   return evenOrOdd;
 };
