@@ -12,7 +12,11 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  return  input.reduce((a, v) => {
+    // console.log(`accumalator: ${a}, value: ${v}`)
+    v.filter(value => value === target ? a++ : 0);
+    return a;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +30,7 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  return input.reduce((sum, val) => sum.concat(val)).reduce((a, v) => v + a);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,7 +46,12 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let arr = input.map(v => {
+    return v.filter(e => e % 5 === 0 && typeof(e) === 'number' ? e : false);    
+  });
+  return arr.map(v => {
+    return v.map(value => Math.pow(2, value));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,7 +117,7 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.filter(e => e.gender === 'male' || e.gender === 'female' ? e : false).map(v => v.name).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +127,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((a, v) => a.height < v.height ? a = v : a).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
