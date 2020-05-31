@@ -8,6 +8,7 @@ def insert_shift_array(lst, val):
     lst.insert(mid, val)
     print(lst)
 
+
 insert_shift_array(arr, n)
 
 
