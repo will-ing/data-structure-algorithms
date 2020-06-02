@@ -8,6 +8,8 @@ Write a function called insertShiftArray which takes in an array and the value t
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+using slices to break the array in two parts and then concatenate them together with the integer in the middle. Big O was O(n).
 
 ## Solution
 <!-- Embedded whiteboard image -->
+![image](../assets/shiftWhiteboard.png)
