@@ -8,8 +8,8 @@ Create a Node class that has properties for the value stored in the Node, and a 
 "{ a } -> { b } -> { c } -> NULL"
 
 ## Approach & Efficiency
+![image](../assets/linkedLists.png)
 Time - O(n)\
 Space - O(1)
 
 ## API
-<!-- Description of each method publicly available to your Linked List -->
