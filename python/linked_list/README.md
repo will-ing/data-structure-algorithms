@@ -11,5 +11,9 @@ Create a Node class that has properties for the value stored in the Node, and a 
 ![image](../assets/linkedLists.png)
 Time - O(n)\
 Space - O(1)
+---
+REF: https://www.codefellows.org/blog/implementing-a-singly-linked-list-in-python/\
+Author: John Shiver
+---
 
 ## API
