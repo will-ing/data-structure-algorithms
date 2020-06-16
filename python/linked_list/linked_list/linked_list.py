@@ -87,6 +87,11 @@ class LinkedLists():
 
     def append_to_end(self, data):
         # ref: https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
+        """Appends value to the end of the list
+
+        Args:
+            data ([type]): [any value]
+        """
         current = self.head
         new_node = Node(data)
 
@@ -101,7 +106,12 @@ class LinkedLists():
 
     def insert_after(self, find_data, new_data):
         # ref: https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
+        """Insert after a value that is in the list
 
+        Args:
+            find_data ([any]): [this value has to exist]\\
+            new_data ([type]): [This is the data you want to enter]
+        """
         new_node = Node(new_data)
 
         current = self.head
@@ -113,7 +123,12 @@ class LinkedLists():
             current = current.next_node
 
     def insert_before(self, find_data, new_data):
+        """Insert before a value that is in the list
 
+        Args:
+            find_data ([any]): [this value has to exist]\\
+            new_data ([type]): [This is the data you want to enter]
+        """
         new_node = Node(new_data)
 
         current = self.head
@@ -124,6 +139,30 @@ class LinkedLists():
                 current.next_node = new_node
                 break
             current = current.next_node
+
+    def kth(self, k):
+        """Return the value of a index or kth from the end of the list for a value
+
+        Args:
+            k ([index]): [enter the index you are inquiring about]
+
+        Returns:
+            [value]: [this the value of the index you entered]
+        """
+
+        current = self.head
+        count = 0
+        idx = count - k
+        while current is not None:
+            count += 1
+            current = current.next_node
+
+        current = self.head
+        idx = count - k
+        for i in range(idx):
+            current = current.next_node
+
+        return current.data
 
 
 link_list = LinkedLists()
