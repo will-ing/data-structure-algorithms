@@ -8,7 +8,7 @@ class Node:
 
     def __init__(self, data=None, next_node=None):
         """
-        This initializes the node 
+        This initializes the node
 
         Args:
             data ([any]): [This can be a string, integer, etc]
@@ -20,14 +20,14 @@ class Node:
     def __repr__(self):
         return f'{self.data} -> {self.next_node}'
 
-    def get_data(self):
-        return self.data
+    # def get_data(self):
+    #     return self.data
 
-    def get_next(self):
-        return self.next_node
+    # def get_next(self):
+    #     return self.next_node
 
-    def set_next(self, new_next):
-        self.next_node = new_next
+    # def set_next(self, new_next):
+    #     self.next_node = new_next
 
 
 class LinkedLists():
@@ -46,13 +46,12 @@ class LinkedLists():
         """
         self.head = head
 
+    def __repr__(self):
+        return f'{self.head}'
+
     def __str__(self):
         current = self.head
-        st = ''
-        while current:
-            st += f'{current} -> '
-            current = current.get_next()
-        return st
+        return str(current)
 
     def insert(self, data):
         """
@@ -85,6 +84,46 @@ class LinkedLists():
             return False
 
         return found
+
+    def append_to_end(self, data):
+        # ref: https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
+        current = self.head
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        while (current.next_node):
+            current = current.next_node
+
+        current.next_node = new_node
+
+    def insert_after(self, find_data, new_data):
+        # ref: https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
+
+        new_node = Node(new_data)
+
+        current = self.head
+
+        while current is not None:
+            if current.data == find_data:
+                new_node.next_node = current.next_node
+                current.next_node = new_node
+            current = current.next_node
+
+    def insert_before(self, find_data, new_data):
+
+        new_node = Node(new_data)
+
+        current = self.head
+
+        while current.next_node is not None:
+            if current.next_node.data == find_data:
+                new_node.next_node = current.next_node
+                current.next_node = new_node
+                break
+            current = current.next_node
 
 
 link_list = LinkedLists()
