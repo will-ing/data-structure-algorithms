@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "array_binary_search"
+name = "python_virtual"
 version = "0.1.0"
 description = ""
 authors = ["will-ing <willkoger@gmail.com>"]
