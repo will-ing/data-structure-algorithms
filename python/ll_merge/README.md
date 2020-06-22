@@ -1,6 +1,6 @@
 # Linked list Merge
 <!-- Short summary or background information -->
-
+This will merge to linked lists and alternate the nodes in sequential order
 
 ## Challenge
 <!-- Description of the challenge -->
