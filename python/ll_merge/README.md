@@ -8,8 +8,13 @@ Write a function called mergeLists which takes two linked lists as arguments. Zi
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+While passing through 2 lists evaluate if the head of both do not equal "None". Create a pointer so you can compare the head of each list and which ever is lower becomes the new head. If it's higher check the next node in that list. Once you have gone through all the nodes it should return a merged linked lists head.
+time = O(n)
+space = O(n)
+This is cause the list sizes can vary
 
+`REFs` = https://www.youtube.com/watch?v=r3MAkVZkD0s
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![image](../assets/shiftWhiteboard.png)
+![image](../assets/mergelists.png)

@@ -1,0 +1,18 @@
+from linked_list.linked_list import Node, LinkedList
+from ll_merge.ll_merge import MergedList
+
+
+def test_instantiate():
+    link_one = LinkedList()
+    link_two = LinkedList()
+    link_one.insert(1)
+    link_one.insert(2)
+    link_one.insert(3)
+    link_one.insert(4)
+    link_two.insert(1)
+    link_two.insert(2)
+    link_two.insert(3)
+    link_two.insert(4)
+    new_list = MergedList()
+    new_list.merge(link_one, link_two)
+    assert new_list.data != None
