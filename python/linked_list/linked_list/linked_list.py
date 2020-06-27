@@ -61,7 +61,7 @@ class LinkedLists():
             data ([any]): [Insert string or data etc]
         """
         new_node = Node(data)
-        new_node.set_next(self.head)
+        new_node.next_node(self.head)
         self.head = new_node
 
     def includes(self, data):
