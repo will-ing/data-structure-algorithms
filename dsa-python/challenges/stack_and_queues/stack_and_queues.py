@@ -79,7 +79,7 @@ class Queue:
     def dequeue(self):
         if self.front:
             ptr = self.front
-            self.front = self.front.next
+            self.front = self.front.next_node
             ptr.next = None
             return ptr.data
         else:

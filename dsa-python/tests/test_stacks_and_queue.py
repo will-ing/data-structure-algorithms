@@ -61,7 +61,6 @@ def test_enqueue():
     assert new_queue.front.data == 5
 
 
-# Can successfully enqueue multiple values into a queue
 def test_enqueue_mult():
     new_queue = Queue()
     new_queue.enqueue(5)
@@ -69,7 +68,37 @@ def test_enqueue_mult():
     new_queue.enqueue(3)
     new_queue.enqueue(1)
     assert new_queue.front.data == 1
-# Can successfully dequeue out of a queue the expected value
+
+
+def test_dequeue():
+    new_queue = Queue()
+    new_queue.enqueue(5)
+    new_queue.enqueue(4)
+    new_queue.enqueue(3)
+    new_queue.dequeue()
+    assert new_queue.front.data == 4
+
+
+def test_de_multi():
+    new_queue = Queue()
+    new_queue.enqueue(5)
+    new_queue.enqueue(4)
+    new_queue.enqueue(1)
+    new_queue.dequeue()
+    new_queue.dequeue()
+    assert new_queue.front.data == 5
+
+
+def test_peek_que():
+    new_queue = Queue()
+    new_queue.enqueue(5)
+    new_queue.enqueue(4)
+    assert new_queue.peek() == 4
+
+
+def test_empty_que():
+    new_queue = Queue()
+    assert new_queue.is_empty() == True
 # Can successfully peek into a queue, seeing the expected value
 # Can successfully empty a queue after multiple dequeues
 # Can successfully instantiate an empty queue
