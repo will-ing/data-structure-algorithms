@@ -99,7 +99,3 @@ def test_peek_que():
 def test_empty_que():
     new_queue = Queue()
     assert new_queue.is_empty() == True
-# Can successfully peek into a queue, seeing the expected value
-# Can successfully empty a queue after multiple dequeues
-# Can successfully instantiate an empty queue
-# Calling dequeue or peek on empty queue raises exception
