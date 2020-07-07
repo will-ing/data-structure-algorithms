@@ -12,13 +12,28 @@ class PseudoQueue:
         self.stack_two = []
 
     def enqueue(self, data):
+        """
+        Adds element to the stack
+
+        Args:
+            data ([type]): [Any value]
+        """
         self.stack_one.append(data)
 
     def dequeue(self):
+        """
+        moves stack 1 to stack 2 and pops off the end
+
+        Raises:
+            IndexError: [will return if queue is empty]
+
+        Returns:
+            [value]: [Return FIFO]
+        """
         if len(self.stack_two) == 0:
             if len(self.stack_one) == 0:
                 raise IndexError("Empty queue")
-            while len(self.stack_two) > 0:
+            while len(self.stack_one) > 0:
                 last_item_one = self.stack_one.pop()
                 self.stack_two.append(last_item_one)
         return self.stack_two.pop()
