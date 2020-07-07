@@ -17,8 +17,8 @@ class AnimalShelter():
 
     def dequeue(self, pref):
         if pref == 'cat':
-            return self.cat.pop()
+            self.cat.pop()
         elif pref == 'dog':
-            return self.cat.pop()
+            self.dog.pop()
         else:
             raise ValueError('enter cat or dog animals')
