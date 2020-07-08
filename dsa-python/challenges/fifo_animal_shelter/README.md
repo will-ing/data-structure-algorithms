@@ -18,4 +18,4 @@ space = O(1)
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![image](../assets/.png)
+![image](../../assets/animalshelter.png)
