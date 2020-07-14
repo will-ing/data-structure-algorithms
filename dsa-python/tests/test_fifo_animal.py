@@ -1,4 +1,5 @@
 from challenges.fifo_animal_shelter.fifo_animal_shelter import AnimalShelter
+import pytest
 
 
 def test_animal():
