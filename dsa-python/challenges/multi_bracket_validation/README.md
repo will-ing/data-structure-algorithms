@@ -1,6 +1,6 @@
 # Multi bracket validation
 <!-- Short summary or background information -->
-We need a method that interates over a string and see's if it has open and closed brackets
+We need a method that iterates over a string and see's if it has open and closed brackets
 
 ## Challenge
 <!-- Description of the challenge -->
@@ -15,7 +15,6 @@ Your function should take a string as its only argument, and should return a boo
 Check if it is a open bracket and store it if so in an empty array. Compare stored open bracket to next index value. if True pop.
 time = O(n^2)
 space = O(n)
-
 
 ## Solution
 <!-- Embedded whiteboard image -->
