@@ -1,4 +1,4 @@
-# from challenges.linked_list.linked_list import Node
+# from challenges.linked_list.linked_list import LinkedLists
 
 
 class MergedList:

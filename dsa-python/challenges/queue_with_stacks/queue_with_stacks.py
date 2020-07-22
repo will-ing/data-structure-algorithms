@@ -8,8 +8,8 @@ class PseudoQueue:
     """
 
     def __init__(self):
-        self.stack_one = []
-        self.stack_two = []
+        self.first_stack = []
+        self.second_stack = []
 
     def enqueue(self, data):
         """
@@ -18,7 +18,7 @@ class PseudoQueue:
         Args:
             data ([type]): [Any value]
         """
-        self.stack_one.append(data)
+        self.first_stack.append(data)
 
     def dequeue(self):
         """
@@ -30,10 +30,10 @@ class PseudoQueue:
         Returns:
             [value]: [Return FIFO]
         """
-        if len(self.stack_two) == 0:
-            if len(self.stack_one) == 0:
+        if len(self.second_stack) == 0:
+            if len(self.first_stack) == 0:
                 raise IndexError("Empty queue")
-            while len(self.stack_one) > 0:
-                last_item_one = self.stack_one.pop()
-                self.stack_two.append(last_item_one)
-        return self.stack_two.pop()
+            while len(self.first_stack) > 0:
+                last_item_one = self.first_stack.pop()
+                self.second_stack.append(last_item_one)
+        return self.second_stack.pop()

@@ -20,21 +20,10 @@ class Node:
     def __repr__(self):
         return f'{self.data} -> {self.next_node}'
 
-    # def get_data(self):
-    #     return self.data
-
-    # def get_next(self):
-    #     return self.next_node
-
-    # def set_next(self, new_next):
-    #     self.next_node = new_next
-
 
 class LinkedLists():
     """
     This class creates linked lists
-
-
     """
 
     def __init__(self, head=None):
@@ -164,5 +153,12 @@ class LinkedLists():
 
         return current.data
 
-
-link_list = LinkedLists()
+    def reverse_list(self):
+        prev = None
+        current = self.head
+        while current != None:
+            next_node = current.next_node
+            current.next_node = prev
+            prev = current
+            current = next_node
+        self.head = prev
