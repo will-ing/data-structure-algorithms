@@ -1,4 +1,4 @@
-from linked_list import __version__
+from ll_merge.ll_merge.ll_merge import __version__
 
 
 def test_version():

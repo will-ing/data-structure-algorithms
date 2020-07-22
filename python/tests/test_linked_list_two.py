@@ -1,4 +1,4 @@
-from linked_list.linked_list import link_list, LinkedLists, Node
+from linked_list.linked_list.linked_list import link_list, LinkedLists, Node
 
 
 # def test_empty_list():

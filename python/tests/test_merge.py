@@ -1,4 +1,4 @@
-from linked_list.linked_list import Node, LinkedList
+from linked_list.linked_list.linked_list import Node, LinkedList
 from ll_merge.ll_merge import MergedList
 
 

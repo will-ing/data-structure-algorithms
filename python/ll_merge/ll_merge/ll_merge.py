@@ -1,4 +1,4 @@
-from linked_list.linked_list import LinkedLists, Node
+from linked_list.linked_list import Node
 
 
 class MergedList:

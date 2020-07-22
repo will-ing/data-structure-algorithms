@@ -1,4 +1,4 @@
-from array_binary_search.array_binary_search import binarySearch
+from array_binary_search.array_binary_search.array_binary_search import binarySearch
 
 """
 Write a function called BinarySearch which takes in 2 
