@@ -1,5 +1,6 @@
 # ref (https://www.codefellows.org/blog/implementing-a-singly-linked-list-in-python/)
 # author: John Shiver
+# pylint: disable=unused-variable
 
 class Node:
     """
