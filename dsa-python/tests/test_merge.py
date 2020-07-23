@@ -1,5 +1,5 @@
-# from challenges.ll_merge.ll_merge import MergedList
-# from challenges.linked_list.linked_list import LinkedLists, Node
+from challenges.ll_merge.ll_merge import MergedList
+from challenges.linked_list.linked_list import LinkedLists, Node
 
 
 # def test_instantiate():
@@ -15,4 +15,4 @@
 #     link_two.insert(4)
 #     new_list = MergedList()
 #     new_list.merge(link_one, link_two)
-#     assert new_list.data != None
+#     assert new_list.head != None
