@@ -20,7 +20,44 @@ class BinaryTree:
     def __init__(self, root=None):
         self.root = root
 
-    # def preOrder(self):
+    def in_order(self):
+        """
+        Driver Function that orders from left to root to right nodes
+
+        Returns:
+            [List]: [left, root, right]
+        """
+        return self.in_order_go(self.root)
+
+    def in_order_go(self, root=None):
+        """
+        recursive function to get values
+        """
+        return (self.in_order_go(root.left_child) + [root.val] + self.in_order_go(root.right_child)) if root else []
+
+    def pre_order(self):
+        """
+        Driver Function that orders from root to left to right nodes
+
+        Returns:
+            [List]: [root, left, right]
+        """
+        return self.pre_order_go(self.root)
+
+    def pre_order_go(self, root=None):
+        return ([root.val] + self.pre_order_go(root.left_child) + self.pre_order_go(root.right_child)) if root else []
+
+    def post_order(self):
+        """
+         Driver Function that orders from left to right root to nodes
+
+         Returns:
+             [List]: [root, left, right]
+         """
+        return self.post_order_go(self.root)
+
+    def post_order_go(self, root):
+        return (self.post_order_go(root.left_child) + self.post_order_go(root.right_child) + [root.val]) if root else []
 
 
 class BinarySearchTree:
@@ -40,15 +77,20 @@ class BinarySearchTree:
         current = self.root
         return str(current)
 
-    def contains(self, val, root=None):
-        if root is None or self.root.val == val:
+    def contains(self, val):
+        return self.contains_node(val, self.root)
+
+    def contains_node(self, val, root=None):
+        if root.val is val:
             return True
-        elif val < self.root.val:
-            return self.contains(val, self.root.left_child)
-        elif val > self.root.val:
-            return self.contains(val, self.root.right_child)
-        else:
+        if root.val is None:
             return False
+        elif val < root.val:
+            return self.contains_node(val, root.left_child)
+        elif val > root.val:
+            return self.contains_node(val, root.right_child)
+        else:
+            raise TypeError('Must be an Integer')
 
     def add(self, val):
 
