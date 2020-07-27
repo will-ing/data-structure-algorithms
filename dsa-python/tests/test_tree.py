@@ -52,3 +52,17 @@ def test_post_order():
     actual = new_tree.post_order()
     expected = [1, 9, 5]
     assert actual == expected
+
+
+def test_max():
+    node6 = TreeNode(6)
+    node3 = TreeNode(3)
+    node2 = TreeNode(2)
+    node9 = TreeNode(9, TreeNode(7, node6))
+    node1 = TreeNode(1, TreeNode(4, node3, node2))
+    node = TreeNode(5, node1, node9)
+    print(node)
+    new_tree = BinaryTree(node)
+    actual = new_tree.find_max()
+    expected = 9
+    assert actual == expected

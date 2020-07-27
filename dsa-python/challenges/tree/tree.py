@@ -9,7 +9,7 @@ class TreeNode:
         self.right_child = right
 
     def __repr__(self):
-        return f'{self.left_child}<- {self.val} -> {self.right_child}'
+        return f'Root: {self.val} \nLeft: {self.left_child} \nRight: {self.right_child}'
 
 
 class BinaryTree:
@@ -27,13 +27,13 @@ class BinaryTree:
         Returns:
             [List]: [left, root, right]
         """
-        return self.in_order_go(self.root)
+        return self.in_order_recur(self.root)
 
-    def in_order_go(self, root=None):
+    def in_order_recur(self, root=None):
         """
         recursive function to get values
         """
-        return (self.in_order_go(root.left_child) + [root.val] + self.in_order_go(root.right_child)) if root else []
+        return (self.in_order_recur(root.left_child) + [root.val] + self.in_order_recur(root.right_child)) if root else []
 
     def pre_order(self):
         """
@@ -42,10 +42,10 @@ class BinaryTree:
         Returns:
             [List]: [root, left, right]
         """
-        return self.pre_order_go(self.root)
+        return self.pre_order_recur(self.root)
 
-    def pre_order_go(self, root=None):
-        return ([root.val] + self.pre_order_go(root.left_child) + self.pre_order_go(root.right_child)) if root else []
+    def pre_order_recur(self, root=None):
+        return ([root.val] + self.pre_order_recur(root.left_child) + self.pre_order_recur(root.right_child)) if root else []
 
     def post_order(self):
         """
@@ -54,10 +54,33 @@ class BinaryTree:
          Returns:
              [List]: [root, left, right]
          """
-        return self.post_order_go(self.root)
+        return self.post_order_recur(self.root)
 
-    def post_order_go(self, root):
-        return (self.post_order_go(root.left_child) + self.post_order_go(root.right_child) + [root.val]) if root else []
+    def post_order_recur(self, root):
+        return (self.post_order_recur(root.left_child) + self.post_order_recur(root.right_child) + [root.val]) if root else []
+
+    def find_max(self):
+        """
+        Returns the max value in a binary tree.
+
+        Returns:
+            [int]: Max integer in tree
+        """
+        return self.find_max_recurse(self.root)
+
+    def find_max_recurse(self, current=None):
+        if current is None:
+            return 0
+
+        tree_max = current.val
+        left_max = self.find_max_recurse(current.left_child)
+        right_max = self.find_max_recurse(current.right_child)
+
+        if (left_max > tree_max):
+            tree_max = left_max
+        if (right_max > tree_max):
+            tree_max = right_max
+        return tree_max
 
 
 class BinarySearchTree:

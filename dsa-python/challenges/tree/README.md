@@ -32,6 +32,15 @@ Time = O(log n) *balanced*\
 Time = O(n) *unbalanced*\
 Space = O(n)
 
+### Max-value
+
+![max](../../assets/maxValue.png)
+
+Time = O(log n) *balanced*\
+Time = O(n) *unbalanced*\
+Space = O(1)
+
+
 ## API
 <!-- Description of each method publicly available in each of your trees -->
 
