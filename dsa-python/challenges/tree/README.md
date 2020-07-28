@@ -4,7 +4,7 @@ Binary Search Tree, is a node-based binary tree data structure. They are useful 
 
 ## Challenge
 <!-- Description of the challenge -->
-- Create a `Node` class that has properties for the `value` stored in the node, the `left child `node, and the `right child` node.
+- Create a `Node` class that has properties for the `value` stored in the node, the `left child` node, and the `right child` node.
 
 - Create a `BinaryTree` class:\
 Define a method for each of the depth first traversals called `preOrder`, `inOrder`, and `postOrder` which returns an array of the values, ordered appropriately.
@@ -17,14 +17,14 @@ Define a method named `contains` that accepts a value, and returns a boolean ind
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-### Binary Tree
+## Binary Tree
 
 ![tree](../../assets/binaryTree.png)
 
 Time = O(n)
 Space = O(n)
 
-### Binary Search Tree
+## Binary Search Tree
 
 ![bst](../../assets/bst.png)
 
@@ -32,7 +32,7 @@ Time = O(log n) *balanced*\
 Time = O(n) *unbalanced*\
 Space = O(n)
 
-### Max-value
+## Max-value
 
 ![max](../../assets/maxValue.png)
 
@@ -40,6 +40,11 @@ Time = O(log n) *balanced*\
 Time = O(n) *unbalanced*\
 Space = O(1)
 
+## Breadth
+
+![breadth](../../assets/breadth.png)
+Time = O(n)
+Space = O(n)
 
 ## API
 <!-- Description of each method publicly available in each of your trees -->
@@ -50,6 +55,10 @@ Tree Node -
 - right child\
 - value
 
-Add - Adds a node in proper order
+`Add` - Adds a node in proper order
 
-Contains - Returns boolean if value exists in tree
+`Contains` - Returns boolean if value exists in tree
+
+`Max` - find max value in the tree
+
+`Breadth` - Return an array of all the levels in the tree.

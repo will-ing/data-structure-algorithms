@@ -66,3 +66,16 @@ def test_max():
     actual = new_tree.find_max()
     expected = 9
     assert actual == expected
+
+
+def test_breadth():
+    node6 = TreeNode(6)
+    node3 = TreeNode(3)
+    node2 = TreeNode(2)
+    node9 = TreeNode(9, TreeNode(7, node6))
+    node1 = TreeNode(1, TreeNode(4, node3, node2))
+    node = TreeNode(5, node1, node9)
+    new_tree = BinaryTree(node)
+    actual = new_tree.breadth()
+    expected = [5, 1, 9, 7, 4, 6, 2]
+    assert actual == expected

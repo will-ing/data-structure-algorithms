@@ -82,6 +82,24 @@ class BinaryTree:
             tree_max = right_max
         return tree_max
 
+    def breadth(self):
+        height = self.height(self.root.val)
+
+    def height(self):
+        return height_go(self.root)
+
+    def height_go(self, root):
+        if root is None:
+            return 0
+        else:
+            left_height = height_go(root.left_child)
+            right_height = height_go(root.right_child)
+
+            if left_height > right_height:
+                return left_height + 1
+            else:
+                return right_height + 1
+
 
 class BinarySearchTree:
     """
