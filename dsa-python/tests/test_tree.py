@@ -68,7 +68,7 @@ def test_max():
     assert actual == expected
 
 
-def test_breadth():
+def est_breadth():
     node6 = TreeNode(6)
     node3 = TreeNode(3)
     node2 = TreeNode(2)
