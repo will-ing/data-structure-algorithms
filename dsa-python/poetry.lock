@@ -207,6 +207,17 @@ pytest = ">=2.6.4"
 watchdog = ">=0.6.0"
 
 [[package]]
+category = "dev"
+description = "a python refactoring library..."
+name = "rope"
+optional = false
+python-versions = "*"
+version = "0.17.0"
+
+[package.extras]
+dev = ["pytest"]
+
+[[package]]
 category = "main"
 description = "Python 2 and 3 compatibility utilities"
 name = "six"
@@ -253,7 +264,8 @@ python-versions = "*"
 version = "1.12.1"
 
 [metadata]
-content-hash = "91161603509b8bc0e0c58725d6f1a7aa59ddfde2dde3fbef41063c875cb475aa"
+content-hash = "47552ddfb578fce87f947cbceda855274e2b51dfb4a1167628ec8b782172ace4"
+lock-version = "1.0"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -347,6 +359,9 @@ pytest = [
 ]
 pytest-watch = [
     {file = "pytest-watch-4.2.0.tar.gz", hash = "sha256:06136f03d5b361718b8d0d234042f7b2f203910d8568f63df2f866b547b3d4b9"},
+]
+rope = [
+    {file = "rope-0.17.0.tar.gz", hash = "sha256:658ad6705f43dcf3d6df379da9486529cf30e02d9ea14c5682aa80eb33b649e1"},
 ]
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
