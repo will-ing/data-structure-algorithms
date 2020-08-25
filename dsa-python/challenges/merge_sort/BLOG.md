@@ -1,7 +1,8 @@
 # Merge Sort
 
-Consider the following sudo code.
+> Merge sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves.
 
+Consider the following sudo code:
 
 ```txt
 ALGORITHM Mergesort(arr)
@@ -39,3 +40,54 @@ ALGORITHM Merge(left, right, arr)
        set remaining entries in arr to remaining values in left
 
 ```
+
+First we have to find the left, middle and right of the arr.
+
+```py
+[8, 4, 23, 42, 16, 15]
+ ^      ^           ^
+ L     mid          R
+```
+
+Then we have to separate it in to two arrays
+
+```py
+# left
+[8, 4, 23]
+
+# right
+[42, 16, 15]
+
+```
+
+Then we break them again and sort them.
+
+```py
+# left
+[8, 4, 23]
+
+[4, 8] + [23]
+
+[4, 8, 23]
+
+
+# right
+[42, 16, 15]
+[16, 42] + [15]
+
+[15, 16, 42]
+```
+
+Now we bring the rest together.
+
+```py
+
+[4, 8, 23] + [15, 16, 42]
+
+[4, 8, 15, 16, 23, 42]
+
+```
+
+The best way to do this is to use a helper function to merge everything back together. This sorting method has a time complexity of O(nlogn).
+
+Merge Sort is useful for sorting linked lists in O(nLogn) time. It can also is good for the inversion count problem and external sorting.
