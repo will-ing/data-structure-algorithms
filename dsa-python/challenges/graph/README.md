@@ -1,10 +1,18 @@
 # Graphs
-<!-- Short summary or background information -->
+
+A graph is a non-linear data structure that can be looked at as a collection of vertices (or nodes) potentially connected by line segments named edges.
 
 ## Challenge
-<!-- Description of the challenge -->
+
+Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
+
+* AddNode
+* AddEdge
+* GetNodes
+* GetNeighbors
+* Size
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
 
 ## API

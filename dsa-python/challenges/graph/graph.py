@@ -1,52 +1,61 @@
 
 
-class Node():
+class Node:
 
-    def __init__(self, data=None, _next=None):
+    def __init__(self, data=None):
         """
         Node class
         """
         self.data = data
-        self._next = _next
 
     def __repr__(self):
-        return f'{self.data} -> {self._next}'
+        return f'{self.data}'
 
 
-class Graph():
+class Edge:
+
+    def __init__(self, vertex, weight=0):
+        self.vertex = vertex
+        self.weight = weight
+
+
+class Graph:
     """
     Graph Class
     """
 
     def __init__(self):
-        pass
+        self.adjacency = {}
 
     def add_node(self, val):
         """
         Adds a node to the graph
         """
-        pass
+        new_node = Node(val)
+        self.adjacency[new_node] = []
 
-    def add_edge(self, edge):
+    def add_edge(self, a, b, weight=0):
         """
         Adds a new edge between two nodes in the graph
         """
-        pass
+        edge = Edge(b, weight)
+
+        self.adjacency[a].append(edge)
 
     def get_nodes(self):
         """
         Returns all of the nodes in the graph as a collection
         """
-        pass
+        return self.adjacency.keys()
 
     def get_neighbors(self, node):
         """
         Returns a collection of edges connected to the given node
         """
-        pass
+        return self.adjacency.get(node, [])
 
     def size(self):
         """
         Returns the total number of nodes in the graph
         """
-        pass
+        return len(self.adjacency)
