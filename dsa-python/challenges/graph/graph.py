@@ -38,6 +38,10 @@ class Graph:
         """
         Adds a new edge between two nodes in the graph
         """
+        if a not in self.adjacency:
+            raise KeyError('Not in list')
+        if b not in self.adjacency:
+            raise KeyError('Not in list')
         edge = Edge(b, weight)
 
         self.adjacency[a].append(edge)
