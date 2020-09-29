@@ -63,3 +63,26 @@ class Graph:
         Returns the total number of nodes in the graph
         """
         return len(self.adjacency)
+
+    def breadth(self):
+        from challenges.stack_and_queues.stack_and_queues import Queue
+        queue = Queue()
+        node_list = set()
+        node_name = ""
+
+        queue.enqueue(self.adjacency)
+        node_name += self.adjacency[0].data
+
+        while not queue.is_empty():
+            front = queue.dequeue()
+            node_list.add(front)
+
+            #  get the edges of the current vector
+            neighbors = self.get_neighbors(front)
+            for edge in neighbors:
+                if not edge.vertex in node_list:
+                    node_list.add(edge.vertex)
+                    node_name += edge.vertex.data
+                    queue.enqueue(edge.vertex)
+
+        return node_name

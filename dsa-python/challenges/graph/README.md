@@ -13,6 +13,6 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 * Size
 
 ## Approach & Efficiency
-
+![graph](../../assets/graph)
 
 ## API
